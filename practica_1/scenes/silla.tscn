@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b6fr2htr5nlw"]
+
+[node name="Silla" type="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70104, -1.67484, -1.25875)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.4, 0, 0, 0, 0.147, 0, 0, 0, 1, 0.251587, 0, 0.407969)
+radius = 0.417914
+radial_segments = 25
+rings = 12
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.808757, 0, 0, 0, 0.225347, -0.750971, 0, 1.0263, 0.164892, 0.223764, 0.770521, -0.11087)
+size = Vector3(0.57, 0.026, 1)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277515, 0, 0)
+height = 0.026
+sides = 23
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270208, 0, 0)
+height = 0.026
+sides = 23
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 0.00882071, 0.00350615, 0.731914)
+size = Vector3(0.09, 0.622605, 0.02)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253289, -0.266764, 0.409694)
+radius = 0.042
+height = 0.611
+sides = 17
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0.249667, -0.552283, 0.420819)
+size = Vector3(0.869, 0.044, 0.048)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 0.00187419, 0.0032264, 0.00577363)
+size = Vector3(0.869, 0.044, 0.048)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cldswua5db6ey"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596604, 0)
+radius = 0.02
+height = 0.3
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.596604, 0)
+size = Vector3(0.05, 1, 0.1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0917852, 0)
+size = Vector3(0.05, 0.1, 0.3)

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy3owq2s0yi7c"]
+
+[ext_resource type="PackedScene" uid="uid://c15yyed84amfp" path="res://scenes/chamber.tscn" id="1_p07lh"]
+[ext_resource type="PackedScene" uid="uid://cldswua5db6ey" path="res://scenes/sword.tscn" id="2_k8uqu"]
+[ext_resource type="PackedScene" uid="uid://dikpmljwk3nyy" path="res://scenes/pedestal.tscn" id="3_whdhf"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(21.79, 0, 0, 0, 21.79, 0, 0, 0, 21.79, 0, 0, 0)
+
+[node name="Isla" type="CSGCylinder3D" parent="."]
+visible = false
+radius = 30.0
+height = 0.5
+sides = 18
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Isla"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.99266, -22.7627)
+operation = 2
+radius = 2.0
+height = 12.0
+
+[node name="Ascensor" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.99266, -22.7627)
+visible = false
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Ascensor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0458925, 0)
+operation = 2
+radius = 1.8
+height = 12.0
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Ascensor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.41533, 2.24874)
+operation = 2
+radius = 2.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ascensor/CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.413033, 0)
+operation = 2
+size = Vector3(5, 1, 5)
+
+[node name="Pasillo horizontal" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -9.82102, -20.3304)
+visible = false
+radius = 2.6
+height = 10.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pasillo horizontal"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0.0458927, 0)
+operation = 2
+radius = 2.5
+height = 12.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo horizontal"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -0.5, 2.5)
+size = Vector3(9, 12, 6)
+
+[node name="CSGSphere3D2" parent="." instance=ExtResource("1_p07lh")]
+visible = false
+
+[node name="sword" parent="." instance=ExtResource("2_k8uqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596604, 0)
+visible = false
+
+[node name="pedestal" parent="." instance=ExtResource("3_whdhf")]

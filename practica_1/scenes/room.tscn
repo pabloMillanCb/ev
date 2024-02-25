@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw8rvbpjmpfqn"]
+
+[ext_resource type="PackedScene" uid="uid://b6fr2htr5nlw" path="res://scenes/silla.tscn" id="1_wq67k"]
+[ext_resource type="Script" path="res://scenes/CameraHelper.gd" id="2_gh8ig"]
+[ext_resource type="Script" path="res://scenes/Camera3D.gd" id="2_lo5x5"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08792, 0.682107, 0.261086)
+
+[node name="Silla" parent="." instance=ExtResource("1_wq67k")]
+
+[node name="Silla2" parent="." instance=ExtResource("1_wq67k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56526, -1.67484, -1.25875)
+
+[node name="Silla3" parent="." instance=ExtResource("1_wq67k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70104, -1.67484, 0.853461)
+
+[node name="Silla4" parent="." instance=ExtResource("1_wq67k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56356, -1.67484, 0.643147)
+
+[node name="Paredes y suelo" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Paredes y suelo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3302, 0, 0)
+size = Vector3(10, 5, 10)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Paredes y suelo/CSGBox3D"]
+operation = 2
+size = Vector3(9.5, 4.5, 9.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Paredes y suelo/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240295, -0.897315, 4.64675)
+operation = 2
+size = Vector3(1.48059, 2.69336, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Paredes y suelo/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.182571, 0.361694, -4.98202)
+operation = 2
+size = Vector3(1, 1.69678, 3.84674)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Paredes y suelo/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.796, 0.348389, 0.174726)
+operation = 2
+size = Vector3(1, 1.69678, 3.84674)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74764, 1.27291, -0.444961)
+light_size = 0.09
+omni_range = 87.012
+
+[node name="CameraHelper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96712, 0, 0)
+script = ExtResource("2_gh8ig")
+
+[node name="Camera3D" type="Camera3D" parent="CameraHelper"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.05178, -0.0501227, -0.00641012)
+script = ExtResource("2_lo5x5")
