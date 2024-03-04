@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://daysffnw0lhhv"]
+
+[node name="Arbol" type="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49823, 1.26717, 11.8254)
+radius = 0.2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21729, 0)
+radius = 1.5

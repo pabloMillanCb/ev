@@ -1,10 +1,113 @@
-[gd_scene format=3 uid="uid://c15yyed84amfp"]
+[gd_scene load_steps=4 format=3 uid="uid://c15yyed84amfp"]
 
-[node name="CSGSphere3D2" type="CSGSphere3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.3162, -6.56265)
-radius = 10.0
+[ext_resource type="PackedScene" uid="uid://cldswua5db6ey" path="res://scenes/sword.tscn" id="1_hbie5"]
+[ext_resource type="PackedScene" uid="uid://ihr76d8uxang" path="res://scenes/columna.tscn" id="2_am52f"]
+[ext_resource type="PackedScene" uid="uid://ck6gmmwxl2tn2" path="res://scenes/torch.tscn" id="3_q11dk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="CSGSphere3D" parent="."]
+radius = 8.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.313e-07, -0.504819, 0.264648)
+operation = 1
+size = Vector3(21, 1, 20.4707)
+
+[node name="Walls" type="CSGSphere3D" parent="."]
+radius = 8.0
+rings = 12
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.313e-07, -6.00482, 0.233887)
+operation = 2
+size = Vector3(21, 12, 20.5322)
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Walls"]
+operation = 2
+radius = 7.9
+rings = 12
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 7.7536, 1, 0)
+operation = 2
+radius = 2.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.313e-07, -0.504819, 1)
-operation = 1
-size = Vector3(21, 1, 19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95495, 1.04031, 0)
+size = Vector3(6, 3.9433, 4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.680431, 0.196528, 0)
+operation = 2
+size = Vector3(8, 2.4834, 3)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33887, -1.69454)
+
+[node name="SwordPlace" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027703, 0)
+radius = 2.0
+height = 0.1
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SwordPlace"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0442888, 0.148919, 0)
+size = Vector3(0.376099, 0.276428, 1)
+
+[node name="CSGCylinder3D" parent="SwordPlace/CSGBox3D2" instance=ExtResource("1_hbie5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918686, 0)
+
+[node name="Columns" type="CSGCombiner3D" parent="."]
+
+[node name="Columna" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.508, 5)
+
+[node name="Columna2" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.508, -5)
+
+[node name="Columna3" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.63, 1.508, 2.354)
+
+[node name="Columna4" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.62992, 1.508, -2.354)
+
+[node name="Columna5" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.5346, 1.508, 2.354)
+
+[node name="Columna6" parent="Columns" instance=ExtResource("2_am52f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.535, 1.508, -2.354)
+
+[node name="Altar" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37524, 0.297877, 0)
+size = Vector3(3.266, 1, 5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Altar"]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 2.23942, -0.269042, 0)
+size = Vector3(0.720215, 1.94678, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Altar"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.999506, 1.03745, 0)
+size = Vector3(0.5177, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Altar/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24431, 0, 0)
+operation = 2
+size = Vector3(0.122542, 0.9, 0.9)
+
+[node name="Torch" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.535513, 1.7782)
+
+[node name="Torch2" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.536, -1.778)
+
+[node name="Torch3" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28383, 1.22805, 1.65765)
+
+[node name="Torch4" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.284, 1.228, -1.658)
+
+[node name="Torch5" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68113, 0.535513, 1.7782)
+
+[node name="Torch6" parent="." instance=ExtResource("3_q11dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68113, 0.536, -1.778)

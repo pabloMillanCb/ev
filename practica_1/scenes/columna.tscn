@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ihr76d8uxang"]
+
+[node name="Columna" type="CSGCombiner3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+radius = 0.2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471892, 0)
+operation = 1
+radius = 0.2
+height = 3.0
+cone = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(-0.707107, -8.74228e-08, -0.707107, 6.18172e-08, -1, 6.18172e-08, -0.707107, 0, 0.707107, 0, 0.89274, 0)
+radius = 0.3
+height = 0.5
+sides = 4
+cone = true

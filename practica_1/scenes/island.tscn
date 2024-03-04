@@ -1,66 +1,153 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy3owq2s0yi7c"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3owq2s0yi7c"]
 
-[ext_resource type="PackedScene" uid="uid://c15yyed84amfp" path="res://scenes/chamber.tscn" id="1_p07lh"]
-[ext_resource type="PackedScene" uid="uid://cldswua5db6ey" path="res://scenes/sword.tscn" id="2_k8uqu"]
-[ext_resource type="PackedScene" uid="uid://dikpmljwk3nyy" path="res://scenes/pedestal.tscn" id="3_whdhf"]
+[ext_resource type="PackedScene" uid="uid://c2kvp54f6ey8y" path="res://scenes/tower.tscn" id="1_lhyas"]
+[ext_resource type="PackedScene" uid="uid://cub883pkpdw5n" path="res://scenes/godess_statue.tscn" id="2_j3xx6"]
+[ext_resource type="PackedScene" uid="uid://daysffnw0lhhv" path="res://scenes/arbol.tscn" id="3_yxrob"]
+[ext_resource type="PackedScene" uid="uid://ihr76d8uxang" path="res://scenes/columna.tscn" id="4_geu6j"]
+[ext_resource type="PackedScene" uid="uid://c2skn44h6buer" path="res://scenes/connector.tscn" id="5_dapjj"]
 
-[node name="Node3D" type="Node3D"]
-transform = Transform3D(21.79, 0, 0, 0, 21.79, 0, 0, 0, 21.79, 0, 0, 0)
+[node name="island" type="Node3D"]
 
-[node name="Isla" type="CSGCylinder3D" parent="."]
-visible = false
+[node name="Suelo" type="CSGCylinder3D" parent="."]
 radius = 30.0
 height = 0.5
 sides = 18
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Isla"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.99266, -22.7627)
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Suelo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.99266, -15.7752)
 operation = 2
 radius = 2.0
 height = 12.0
 
-[node name="Ascensor" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.99266, -22.7627)
-visible = false
-radius = 2.0
-height = 12.0
+[node name="Muralla" type="CSGCombiner3D" parent="."]
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Ascensor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0458925, 0)
+[node name="Torre" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9725, 2.24904, 12.7857)
+
+[node name="Torre2" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9855, 2.24904, -8.92763)
+
+[node name="Torre3" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -24.6893)
+
+[node name="Torre4" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -15.0698)
+
+[node name="Torre5" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -0.681412)
+
+[node name="Torre6" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, 12.2729)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Muralla"]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 35, 12.8487, 0.755126, 8.85933)
+
+[node name="Torre7" parent="Muralla" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9855, 2.24904, -20.6179)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Muralla"]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 50, -11.5149, 0.755126, 0.915367)
+
+[node name="Esquina1" type="CSGCombiner3D" parent="Muralla"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Muralla/Esquina1"]
+transform = Transform3D(-8.74228e-08, 0, -8, 0, 8, 0, 2, 0, -3.49691e-07, 8.59781, 0.755126, 25.375)
+
+[node name="Esquina 2" type="CSGCombiner3D" parent="Muralla"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Muralla/Esquina 2"]
+transform = Transform3D(-8.74228e-08, 0, -6, 0, 8, 0, 2, 0, -2.62268e-07, -9.52732, 0.755126, 25.375)
+
+[node name="Cupula" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.35275)
+
+[node name="Sphere" type="CSGSphere3D" parent="Cupula"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.372921, 24.3661)
+radius = 9.0
+rings = 12
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Cupula/Sphere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.75097, 0)
 operation = 2
-radius = 1.8
-height = 12.0
+size = Vector3(24, 15, 24)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Ascensor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.41533, 2.24874)
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Cupula/Sphere"]
 operation = 2
-radius = 2.0
+radius = 8.0
+rings = 12
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Ascensor/CSGSphere3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.413033, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Cupula/Sphere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19289, 6.12777)
 operation = 2
-size = Vector3(5, 1, 5)
+size = Vector3(24, 15, 12)
 
-[node name="Pasillo horizontal" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -9.82102, -20.3304)
-visible = false
-radius = 2.6
-height = 10.0
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pasillo horizontal"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0.0458927, 0)
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Cupula/Sphere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.28387)
 operation = 2
-radius = 2.5
-height = 12.0
+radius = 4.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo horizontal"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -0.5, 2.5)
-size = Vector3(9, 12, 6)
+[node name="Torre" parent="Cupula" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.15227, 2.24904, 23.1969)
 
-[node name="CSGSphere3D2" parent="." instance=ExtResource("1_p07lh")]
-visible = false
+[node name="Torre2" parent="Cupula" instance=ExtResource("1_lhyas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.29348, 2.24904, 23.1969)
 
-[node name="sword" parent="." instance=ExtResource("2_k8uqu")]
-visible = false
+[node name="Estatua" parent="." instance=ExtResource("2_j3xx6")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 2.30833, -17.6835)
 
-[node name="pedestal" parent="." instance=ExtResource("3_whdhf")]
+[node name="Arboles" type="CSGCombiner3D" parent="."]
+
+[node name="Arbol" parent="Arboles" instance=ExtResource("3_yxrob")]
+
+[node name="Arbol2" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0123, 1.26717, 5.35589)
+
+[node name="Arbol3" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7789, 1.26717, 16.1782)
+
+[node name="Arbol4" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0115, 1.26717, 12.6306)
+
+[node name="Arbol5" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4645, 1.26717, 8.71158)
+
+[node name="Arbol6" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.865, 1.26717, -6.28416)
+
+[node name="Arbol7" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7915, 1.26717, -4.30171)
+
+[node name="Arbol8" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1024, 1.26717, 11.7719)
+
+[node name="Arbol9" parent="Arboles" instance=ExtResource("3_yxrob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22688, 1.26717, 8.16736)
+
+[node name="Columnas" type="CSGCombiner3D" parent="."]
+
+[node name="Columna" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.26795, 1.43292, 17.2784)
+
+[node name="Columna2" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.86178, 1.43292, 17.2784)
+
+[node name="Columna3" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.26795, 1.43292, -5.0603)
+
+[node name="Columna4" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.86178, 1.43292, -5.05209)
+
+[node name="Columna5" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.1985, 1.43292, -8.4725)
+
+[node name="Columna6" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 6.07121, 1.43292, -8.4725)
+
+[node name="Columna7" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.26795, 1.43292, 25.3782)
+
+[node name="Columna8" parent="Columnas" instance=ExtResource("4_geu6j")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -2.90689, 1.43292, 25.3782)
+
+[node name="Connector" parent="." instance=ExtResource("5_dapjj")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -7.7377, -15.7106)
