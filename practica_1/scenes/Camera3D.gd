@@ -8,4 +8,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_pressed("left_arrow"):
+		get_parent().get_parent().rotate_object_local(Vector3(0,1,0), 0.01)
+		
+	if Input.is_action_pressed("right_arrow"):	
+		get_parent().get_parent().rotate_object_local(Vector3(0,1,0), -0.01)
+		
+	if Input.is_action_pressed("up_arrow") and get_parent().rotation[2] > -0.5:
+		get_parent().rotate_object_local(Vector3(0,0,1), -0.01)
+		
+	if Input.is_action_pressed("down_arrow") and get_parent().rotation[2] < 0.5:
+		get_parent().rotate_object_local(Vector3(0,0,1), 0.01)

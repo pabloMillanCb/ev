@@ -1,31 +1,7 @@
 [gd_scene format=3 uid="uid://b6fr2htr5nlw"]
 
 [node name="Silla" type="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70104, -1.67484, -1.25875)
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1.4, 0, 0, 0, 0.147, 0, 0, 0, 1, 0.251587, 0, 0.407969)
-radius = 0.417914
-radial_segments = 25
-rings = 12
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.808757, 0, 0, 0, 0.225347, -0.750971, 0, 1.0263, 0.164892, 0.223764, 0.770521, -0.11087)
-size = Vector3(0.57, 0.026, 1)
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277515, 0, 0)
-height = 0.026
-sides = 23
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270208, 0, 0)
-height = 0.026
-sides = 23
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 0.00882071, 0.00350615, 0.731914)
-size = Vector3(0.09, 0.622605, 0.02)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.363532, -0.03601, -0.262538)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253289, -0.266764, 0.409694)
@@ -40,3 +16,73 @@ size = Vector3(0.869, 0.044, 0.048)
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D3"]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 0.00187419, 0.0032264, 0.00577363)
 size = Vector3(0.869, 0.044, 0.048)
+
+[node name="Cogin_sillon" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-8.97526e-08, -2.44401, 0, 2.0533, -1.06831e-07, 0, 0, 0, 2.06486, 1.76627, -0.914207, 0.40313)
+sides = 30
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Cogin_sillon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0381564, -0.106323, 0)
+operation = 2
+size = Vector3(1, 2.43042, 1)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Cogin_sillon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.359074, 0)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Cogin_sillon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.873722, 0)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Cogin_sillon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.601574, 0.278333)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Cogin_sillon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.604667, -0.26287)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="Cogin_sillon2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-8.26936e-08, -2.44401, 5.54132e-15, 0.492825, -2.78299e-08, -2.57467, 1.82649, -1.03142e-07, 0.694698, 1.74829, 0.529136, -0.964641)
+sides = 30
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Cogin_sillon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0381564, -0.106323, 0)
+operation = 2
+size = Vector3(1, 2.43042, 1)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Cogin_sillon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.359074, 0)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Cogin_sillon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.873722, 0)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Cogin_sillon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.601574, 0.278333)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Cogin_sillon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259764, 0.604667, -0.26287)
+operation = 1
+radial_segments = 30
+rings = 30
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Cogin_sillon2"]
+transform = Transform3D(-1.86868e-08, 0.0192581, 0.554796, -0.330915, -6.51603e-10, -1.87717e-08, 4.66067e-16, -0.287991, 0.0186705, 0.46406, 0.613758, 0.187787)
+size = Vector3(0.09, 0.622605, 0.02)

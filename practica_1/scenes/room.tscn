@@ -8,6 +8,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08792, 0.682107, 0.261086)
 
 [node name="Silla" parent="." instance=ExtResource("1_wq67k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77962, -1.6554, -1.21823)
 
 [node name="Silla2" parent="." instance=ExtResource("1_wq67k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56526, -1.67484, -1.25875)
@@ -48,10 +49,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74764, 1.27291, -0.444961)
 light_size = 0.09
 omni_range = 87.012
 
-[node name="CameraHelper" type="Node3D" parent="."]
+[node name="CameraGrade1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96712, 0, 0)
 script = ExtResource("2_gh8ig")
 
-[node name="Camera3D" type="Camera3D" parent="CameraHelper"]
+[node name="CameraGrade2" type="Node3D" parent="CameraGrade1"]
+
+[node name="Camera3D" type="Camera3D" parent="CameraGrade1/CameraGrade2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.05178, -0.0501227, -0.00641012)
 script = ExtResource("2_lo5x5")
