@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3owq2s0yi7c"]
+[gd_scene load_steps=8 format=3 uid="uid://dy3owq2s0yi7c"]
 
 [ext_resource type="PackedScene" uid="uid://c2kvp54f6ey8y" path="res://scenes/tower.tscn" id="1_lhyas"]
+[ext_resource type="PackedScene" uid="uid://4ddbcpra8crl" path="res://blender/wall.glb" id="2_1fqa4"]
 [ext_resource type="PackedScene" uid="uid://cub883pkpdw5n" path="res://scenes/godess_statue.tscn" id="2_j3xx6"]
+[ext_resource type="PackedScene" uid="uid://bcf87r1rfudr8" path="res://scenes/gate.tscn" id="3_31smf"]
 [ext_resource type="PackedScene" uid="uid://daysffnw0lhhv" path="res://scenes/arbol.tscn" id="3_yxrob"]
 [ext_resource type="PackedScene" uid="uid://ihr76d8uxang" path="res://scenes/columna.tscn" id="4_geu6j"]
 [ext_resource type="PackedScene" uid="uid://c2skn44h6buer" path="res://scenes/connector.tscn" id="5_dapjj"]
@@ -22,75 +24,48 @@ height = 12.0
 [node name="Muralla" type="CSGCombiner3D" parent="."]
 
 [node name="Torre" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9725, 2.24904, 12.7857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9725, 2.24904, 12.7857)
 
 [node name="Torre2" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9855, 2.24904, -8.92763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9855, 2.24904, -8.92763)
 
 [node name="Torre3" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -24.6893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767, 2.24904, -24.6893)
 
 [node name="Torre4" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -15.0698)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767, 2.24904, -15.0698)
 
 [node name="Torre5" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, -0.681412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767, 2.24904, -0.681412)
 
 [node name="Torre6" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.767, 2.24904, 12.2729)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Muralla"]
-transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 35, 12.8487, 0.755126, 8.85933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767, 2.24904, 12.2729)
 
 [node name="Torre7" parent="Muralla" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.9855, 2.24904, -20.6179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9855, 2.24904, -20.6179)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Muralla"]
-transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 50, -11.5149, 0.755126, 0.915367)
+[node name="wall" parent="Muralla" instance=ExtResource("2_1fqa4")]
+transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 7.3, 12.9625, 2.96876, 8.93098)
 
-[node name="Esquina1" type="CSGCombiner3D" parent="Muralla"]
+[node name="wall2" parent="Muralla" instance=ExtResource("2_1fqa4")]
+transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 10.5, -11.9056, 2.96876, 1.31724)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Muralla/Esquina1"]
-transform = Transform3D(-8.74228e-08, 0, -8, 0, 8, 0, 2, 0, -3.49691e-07, 8.59781, 0.755126, 25.375)
+[node name="wall3" parent="Muralla" instance=ExtResource("2_1fqa4")]
+transform = Transform3D(-8.74228e-08, 0, -1.7, 0, 2.5, 0, 2, 0, -7.43094e-08, 8.63295, 2.96876, 25.5639)
 
-[node name="Esquina 2" type="CSGCombiner3D" parent="Muralla"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Muralla/Esquina 2"]
-transform = Transform3D(-8.74228e-08, 0, -6, 0, 8, 0, 2, 0, -2.62268e-07, -9.52732, 0.755126, 25.375)
+[node name="wall4" parent="Muralla" instance=ExtResource("2_1fqa4")]
+transform = Transform3D(-8.74228e-08, 0, -1.4, 0, 2.5, 0, 2, 0, -6.11959e-08, -8.40672, 2.96876, 25.5639)
 
 [node name="Cupula" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.35275)
-
-[node name="Sphere" type="CSGSphere3D" parent="Cupula"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.372921, 24.3661)
-radius = 9.0
-rings = 12
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Cupula/Sphere"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.75097, 0)
-operation = 2
-size = Vector3(24, 15, 24)
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Cupula/Sphere"]
-operation = 2
-radius = 8.0
-rings = 12
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Cupula/Sphere"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19289, 6.12777)
-operation = 2
-size = Vector3(24, 15, 12)
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Cupula/Sphere"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.28387)
-operation = 2
-radius = 4.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0899963, 0, 2.35613)
 
 [node name="Torre" parent="Cupula" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.15227, 2.24904, 23.1969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15227, 2.24904, 23.1969)
 
 [node name="Torre2" parent="Cupula" instance=ExtResource("1_lhyas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.29348, 2.24904, 23.1969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29348, 2.24904, 23.1969)
+
+[node name="Gate" parent="Cupula" instance=ExtResource("3_31smf")]
 
 [node name="Estatua" parent="." instance=ExtResource("2_j3xx6")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 2.30833, -17.6835)

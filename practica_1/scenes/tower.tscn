@@ -1,19 +1,30 @@
-[gd_scene format=3 uid="uid://c2kvp54f6ey8y"]
+[gd_scene load_steps=2 format=3 uid="uid://c2kvp54f6ey8y"]
 
-[node name="Torre" type="CSGBox3D"]
+[ext_resource type="PackedScene" uid="uid://4ddbcpra8crl" path="res://blender/tower.glb" id="1_be1wn"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Torre" type="CSGBox3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.24904, 0)
+visible = false
 size = Vector3(1, 2.323, 1)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Torre"]
 transform = Transform3D(0.707107, 0, 0.707107, -6.18172e-08, -1, 6.18172e-08, 0.707107, -8.74228e-08, -0.707107, 0, 0.890031, 0)
+visible = false
 radius = 1.0
 height = 1.0
 sides = 4
 cone = true
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Torre"]
 transform = Transform3D(0.707107, 0, 0.707107, 2.98023e-08, 1, -2.98023e-08, -0.707107, 5.96046e-08, 0.707107, 0, 1.80264, 0)
+visible = false
 radius = 0.8
 height = 0.9
 sides = 4
 cone = true
+
+[node name="tower" parent="." instance=ExtResource("1_be1wn")]
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 0, 0, 0)

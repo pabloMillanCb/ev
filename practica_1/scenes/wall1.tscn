@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cjq756ckpqoti"]
+
+[node name="CSGBox3D" type="CSGBox3D"]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 35, 12.8487, 0.755126, 8.85933)
