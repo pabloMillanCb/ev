@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2kvp54f6ey8y"]
 
-[ext_resource type="PackedScene" uid="uid://4ddbcpra8crl" path="res://blender/tower.glb" id="1_be1wn"]
+[ext_resource type="PackedScene" uid="uid://denhbpwulunby" path="res://blender/tower.glb" id="1_rlp3d"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -26,5 +26,5 @@ height = 0.9
 sides = 4
 cone = true
 
-[node name="tower" parent="." instance=ExtResource("1_be1wn")]
-transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 0, 0, 0)
+[node name="tower2" parent="." instance=ExtResource("1_rlp3d")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
